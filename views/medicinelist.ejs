@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealMe</title>
+    <link rel="stylesheet" href="../frontendcss/main.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+    <link rel="stylesheet" type="text/css" href="/medicine/app.css">
+
+</head>
+<body id="bg-img">
+    <nav class="navbar navbar-fixed-top">
+        <!-- <h2 class='text-center text-white'>Welcome,User</h2> -->
+        
+        <button type="button" class="btn btn-primary pull-left" id="dashboard"><a href="/dashboard" id = "dashboard-a">
+            <i class="fas fa-home fa-2x"></i>
+        </a>
+        </button>
+        <button type="button" class="btn btn-primary pull-right" id="dashboard"><a href="/users/logout" id="dashboard-a">
+                <i class="fas fa-sign-out-alt fa-2x"></i>
+            </a>
+        </button>
+
+    </nav>
+    <!-- side menu branding -->
+    
+<div id='container' class="container">
+    <h1><%= user.name %>'s list<i class="fas fa-plus"></i></h1>
+    <input type="text" class="inside" placeholder=" Enter a medicine....">
+    <form>
+        <div class='emptydiv'></div>
+        <div class="inside effect effect-2"><input type="checkbox"><span class="text">Soframycin</span><span class="lol">&nbsp&nbsp&nbsp</span></div>
+        <div class="inside effect effect-2"><input type="checkbox"><span class="text">Crocin</span><span class="lol">&nbsp&nbsp&nbsp</span></div>
+    </form>
+</div>
+<script>
+    console.log("javascript connected")
+    let items = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
+    localStorage.setItem('items', JSON.stringify(items));
+    console.log('local storage' + localStorage)
+    data = JSON.parse(localStorage.getItem('items'));;
+
+    data.forEach(function (item) {
+        $(".emptydiv").first().after(newItemCreator(item))
+    })
+
+    $("input[type=checkbox]").on('click', hello)
+    $("span.lol").on('click', remove)
+    $("input[type=text]").focus()
+
+    $("input[type=text]").on("keypress", function (e) {
+        if (e.which === 13) {
+            var newTodoItem = $(this).val();
+            console.log(newTodoItem);
+            items.push(newTodoItem)
+            localStorage.setItem('items', JSON.stringify(items));
+            $(".emptydiv").first().after(newItemCreator(newTodoItem))
+            $(this).val('')
+            $("input[type=checkbox]").first().on('click', function () { $(this).next().toggleClass("done"); })
+            $("span.lol").first().on('click', remove)
+        }
+    })
+    $(".fa-plus").on("click", function () {
+        $("input[type=text]").fadeToggle("fast", "linear")
+    })
+
+    function newItemCreator(newTodoItem) {
+        return '<div class = "inside effect effect-2"><input type="checkbox"><span class = "text">' + newTodoItem + '</span><span class = "lol">&nbsp&nbsp&nbsp</span></div>'
+    }
+    function hello() {
+        $(this).next().toggleClass("done");
+
+    }
+
+    function remove() {
+        var textval = $(this).closest("div")[0].innerText.trim()
+        items.remove(textval)
+        localStorage.setItem('items', JSON.stringify(items));
+        $(this).closest("div").fadeOut(300, function () {
+            $(this).remove()
+        })
+
+    }
+
+    Array.prototype.remove = function () {
+        var what, a = arguments, L = a.length, ax;
+        while (L && this.length) {
+            what = a[--L];
+            while ((ax = this.indexOf(what)) !== -1) {
+                this.splice(ax, 1);
+            }
+        }
+        return this;
+    };
+
+
+// localStorage.clear()
+
+</script>
+</body>
+
+</html>
