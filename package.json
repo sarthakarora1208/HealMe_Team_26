@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    n"start": "node app.js",
+    "start": "node app.js",
     "dev": "nodemon app.js",
     "sass": "node-sass -w scss/ -o public/frontendcss/ --recursive"
   },
