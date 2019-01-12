@@ -28,7 +28,7 @@ console.log(req.body)
         },miliseconds(time));
 
 req.flash('success_msg', 'You will be notified to take your medicine')
-res.redirect('/reminder');
+res.redirect('/dashboard');
 
 }
 //     let errors = [];
