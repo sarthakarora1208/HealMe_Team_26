@@ -14,6 +14,9 @@ console.log(name)
 console.log(time)
 console.log(email)
 console.log(req.body)
+if(!name){
+    res.redirect('/dasboard')
+}
     const smtpTransport = nodemailer.createTransport({
         service: 'gmail',
         auth: {
