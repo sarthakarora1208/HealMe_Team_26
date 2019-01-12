@@ -24,6 +24,10 @@ router.get('/medicinelist', ensureAuthenticated, (req, res) =>
     res.render("medicinelist", {
         user: req.user
     }));
-
+router.get("/reminder", ensureAuthenticated, (req, res) =>
+  res.render("reminder", {
+    user: req.user
+  })
+);
 module.exports = router;
 
