@@ -1,0 +1,63 @@
+// $primary-color:#5CDB95;
+// $secondary-color:#05386B;
+$primary-color:#444;
+$secondary-color: #1565c0;
+$show-home-image: true;
+$home-image: url(https://www.google.com/imgres?imgurl=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fs.cdpn.io%2F3%2Frip.svg&imgrefurl=https%3A%2F%2Fcss-tricks.com%2Flodge%2Fsvg%2F06-using-svg-svg-background-image%2F&docid=GoAuF9aYELjztM&tbnid=-Selly3dHsBurM%3A&vet=10ahUKEwifkqa56-XfAhUL6Y8KHQkIA4oQMwg_KAAwAA..i&w=798&h=600&bih=553&biw=1242&q=white%20background%20url&ved=0ahUKEwifkqa56-XfAhUL6Y8KHQkIA4oQMwg_KAAwAA&iact=mrc&uact=8);
+// $home-image:#222
+$backgound-opacity: 0.4;
+$potrait: url(/img/photo.jpg);
+@mixin easeOut {     
+    transition: all 0.25s ease-out;
+}
+@mixin background
+{
+    @if $show-home-image {
+        &#bg-img{
+            // background:#1a1a1a; 
+            background:#ffffff;
+            background-attachment:fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
+
+        }
+       
+    }
+}
+
+
+@function set-text-color($color){
+    @if (lightness($color)> 40){
+        @return #000;
+    } @else {
+        @return #fff;
+    }
+
+}
+
+// Media querys
+@mixin mediaSm {
+    @media screen and (max-width:500px){
+        @content;
+    }
+}
+
+@mixin mediaMd{
+    @media screen and (max-width:768px){
+        @content;
+    }
+}
+@mixin mediaLg {
+    @media screen and (min-width:769px) and(max-width:1170px) {
+        @content;
+    }
+}
+@mixin mediaXl {
+    @media screen and (min-width:1171px)  
+    {
+        @content;
+    }
+}
+
+
+

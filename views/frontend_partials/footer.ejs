@@ -1,0 +1,24 @@
+<footer id= "main-footer">
+        Copyright &copy; 2018
+        
+</footer>
+<script src = "js/materialize.js"></script>
+<script src="js/main.js"></script>
+    <script>
+        // const sideNav = document.querySelector('.sidenav');
+        // M.Sidenav.init(sideNav,{});
+        const slider = document.querySelector('.slider');
+        M.Slider.init(slider,{
+            indicators :false,
+            height:400,
+            transition:500,
+            interval:6000,
+        })
+        const coursel = document.querySelector('.carousel')
+        M.Carousel.init(coursel,{})
+        const Collapse = document.querySelectorAll('.collapsible')
+        M.Collapsible.init(Collapse, {})
+    </script>
+</body>
+
+</html>

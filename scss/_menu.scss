@@ -1,0 +1,185 @@
+//Menu
+.menu-btn 
+{
+    position: absolute;
+    z-index: 3;
+    right: 35px;
+    top: 25px;
+    cursor: pointer;
+    @include easeOut;
+
+    .btn-line{
+        width: 28px;
+        height: 3px;
+        margin: 0 0 5px 0;
+        background: set-text-color($primary-color);
+        @include easeOut;
+        
+    }
+    // rotate Into x with menu Lines
+    &.close{
+        // background: red;
+        transform: rotate(180deg);
+        .btn-line
+        {
+            // Line 1  - Rotate
+            &:nth-child(1)
+            {
+                transform: rotate(45deg) translate(5px,5px);
+            }
+        
+            //Line 2 - Hide
+            &:nth-child(2)
+            {
+                opacity: 0;
+            }
+
+            // Line 3 - Rotate
+            &:nth-child(3)
+            {
+                transform: rotate(-45deg) translate(7px,-5.5px);
+            }
+            
+
+        }
+    }
+
+}
+//Menu 
+
+.menu
+{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        // opacity:0.9;
+        visibility: hidden;
+        z-index: 2;
+        &.show{
+            visibility: visible ;
+        }
+        &-branding,&-nav{
+            display: flex;
+            flex-flow: column wrap;
+            align-items:center;
+            justify-content: center;
+            float: left;
+            width: 50%;
+            height: 100vh;
+            overflow: hidden;
+
+            
+        }
+        &-nav{
+            margin: 0;
+            padding: 0;
+            // background: rgba(darken($primary-color,5),1);
+            background: rgba(darken(#1a1a1a,5),1);
+            list-style: none;
+            transform: translate3d(0,-100%,0);
+            @include easeOut;
+
+            &.show
+            {
+                transform: translate3d(0,0,0);
+            }
+        }
+        // Branding Side
+        &-branding{
+            // background: rgba($primary-color,1);
+            background: rgba(#1a1a1a,1);
+            
+            transform: translate3d(0,100%,0);
+            @include easeOut;
+
+       
+        &.show
+        {
+            transform: translate3d(0,0,0);
+        }
+        .potrait{
+            width:250px;
+            height:250px;
+            background: $potrait;
+            object-fit: cover;
+            border-radius: 50%;
+            border: solid 3px $secondary-color;
+
+
+        }
+    }
+    .nav-item{
+        transform: translate3d(600px,0,0);
+        @include easeOut;
+
+        &.show
+        {
+            transform: translate3d(0,0,0);
+        }
+        &.current > a{
+            color: $secondary-color
+        }
+
+    }
+    .nav-link{
+        display: inline-block;
+        position: relative;
+        font-size: 30px;
+        text-transform: uppercase;
+        padding: 1rem 0;
+        font-weight: 300;
+        color:set-text-color($primary-color);
+        text-decoration:none;
+        @include easeOut;
+
+        &:hover{
+            color: $secondary-color;
+        }
+    }
+}
+@for $x from 1 through 4 {
+    .nav-item:nth-child(#{$x})
+    {
+        transition-delay: $x * 0.1s;
+    }
+
+}
+// .circle{
+
+//         background-color:blue;
+//         height: 40px;
+//         right: 30px;
+//         top: 26px;
+//         padding: 1rem;
+        
+//         width: 40px;
+        
+//         position: fixed;
+       
+        
+//         border-radius: 50%;
+//         z-index: -1;
+//         // -webkit-box-shadow: 0 0.5rem 1.5rem rgba(51,51,51,.2);
+//         // box-shadow: 0 0.5rem 1.5rem rgba(51,51,51,.2);
+//         text-align: center;
+       
+
+// }
+// .nav-item{
+//     &:nth-child(1)
+//     {
+//         transition-delay: 0.1s;
+//     }
+//     &:nth-child(2)
+//     {
+//         transition-delay: 0.2s;
+//     }
+//     &:nth-child(3)
+//     {
+//         transition-delay: 0.3s;
+//     }
+//     &:nth-child(4)
+//     {
+//         transition-delay: 0.4s;
+//     }
+// }

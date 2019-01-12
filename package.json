@@ -1,0 +1,33 @@
+{
+  "name": "1node_passport_login",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "sass": "node-sass -w scss/ -o public/frontendcss/ --recursive"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^6.3.1",
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-ejs-layouts": "^2.5.0",
+    "express-session": "^1.15.6",
+    "luxon": "^1.9.0",
+    "materialize-css": "^1.0.0",
+    "mongoose": "^5.4.1",
+    "node-sass": "^4.11.0",
+    "nodemailer": "^5.1.0",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}
