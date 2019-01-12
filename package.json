@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    n"start": "node app.js",
     "dev": "nodemon app.js",
     "sass": "node-sass -w scss/ -o public/frontendcss/ --recursive"
   },
@@ -29,5 +29,8 @@
   },
   "devDependencies": {
     "nodemon": "^1.18.9"
+  },
+  "engines" : {
+    "node":"8.12.0"
   }
 }
