@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { ensureAuthenticated } = require("../config/auth"); //ES6
 const nodemailer = require("nodemailer");
-
+const ReminderController = require("../controllers/reminder");
 // Renders the welcome page
 router.get('/',(req,res)=>{
     res.render('home')
@@ -29,5 +29,6 @@ router.get("/reminder", ensureAuthenticated, (req, res) =>
     user: req.user
   })
 );
+router.post('/reminder',ensureAuthenticated,ReminderController.postreminder)
 module.exports = router;
 
