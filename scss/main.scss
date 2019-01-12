@@ -168,7 +168,8 @@ grid-template-columns: repeat(3,1fr);
 #main-footer{
     text-align: center;
     padding: 1rem;
-    // background: darken($primary-color,10);
+   
+    // background-color:darken(#1565c0,10);
     background-color:darken(#1565c0,10);
     color: set-text-color($primary-color);
     height: 7vh;
@@ -195,4 +196,12 @@ nav{
     color:black;
     
 }
+.icons
+    {
+        margin-top: 1rem;
+        a
+        {
+            padding: 0.4rem;
+        }
 
+    }
