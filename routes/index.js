@@ -7,6 +7,10 @@ const ReminderController = require("../controllers/reminder");
 router.get('/',(req,res)=>{
     res.render('home')
 });
+router.post('/home',(req,res)=>{
+    console.log(req.body)
+    res.redirect("https://www.google.com/maps/search/"+ req.body.pincode+"+hospitals+near+me");
+})
 router.get('/about',(req,res)=>{
  
     res.render('about');   
