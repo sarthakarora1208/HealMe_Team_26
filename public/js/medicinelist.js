@@ -1,7 +1,5 @@
-console.log("javascript connected")
 let items = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
 localStorage.setItem('items', JSON.stringify(items));
-console.log('local storage' + localStorage)
 data = JSON.parse(localStorage.getItem('items'));;
 
 data.forEach(function (item) {
@@ -15,7 +13,7 @@ $("input[type=text]").focus()
 $("input[type=text]").on("keypress", function (e) {
     if (e.which === 13) {
         var newTodoItem = $(this).val();
-        console.log(newTodoItem);
+        // console.log(newTodoItem);
         items.push(newTodoItem)
         localStorage.setItem('items', JSON.stringify(items));
         $(".emptydiv").first().after(newItemCreator(newTodoItem))
