@@ -47,7 +47,7 @@ header
     color: $secondary-color;
 
 }
-main 
+main {
 {
     padding: 4rem;
     // height: 100%;
@@ -62,7 +62,7 @@ main
             margin-top: 20vh;
         }
     }
-
+}
 .about-info{
 display: grid;
 grid-gap: 30px;
