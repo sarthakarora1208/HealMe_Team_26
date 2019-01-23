@@ -26,7 +26,7 @@ app.use(express.static('public'));
 app.set('view engine','ejs');
 
 // prints when the server was acessed 
-app.use(require("./datestamp/datestamp.js"));
+
 app.use(express.urlencoded({ extended: false}));
 
 // Express Session
@@ -57,8 +57,6 @@ app.use(flash());
 const PORT = process.env.PORT || 5001;
 
 
-
-
 //routes
 
 app.use('/',require('./routes/index'));
@@ -66,7 +64,3 @@ app.use('/users',require('./routes/users'));
 
 
 app.listen(PORT,console.log(`Server started on Port ${PORT}`));
-
-// app.listen(process.env.PORT, process.env.IP,function () {
-//     console.log("Server Started")
-// });
