@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HealMe</title>
-    <link rel="stylesheet" href="../frontendcss/main.css">
+    <link rel="stylesheet" href="/frontendcss/main.css">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
@@ -22,9 +22,7 @@
 
 </head>
 <body id="bg-img">
-    <nav class="navbar navbar-fixed-top">
-        <!-- <h2 class='text-center text-white'>Welcome,User</h2> -->
-        
+    <nav class="navbar navbar-fixed-top">        
         <button type="button" class="btn btn-primary pull-left" id="dashboard"><a href="/dashboard" id = "dashboard-a">
             <i class="fas fa-home fa-2x"></i>
         </a>
@@ -35,15 +33,12 @@
         </button>
 
     </nav>
-    <!-- side menu branding -->
-    
 <div id='container' class="container">
     <h1><%= user.name %>'s list<i class="fas fa-plus"></i></h1>
     <input type="text" class="inside" placeholder=" Enter a medicine....">
     <form>
         <div class='emptydiv'></div>
-        <div class="inside effect effect-2"><input type="checkbox"><span class="text">Soframycin</span><span class="lol">&nbsp&nbsp&nbsp</span></div>
-        <div class="inside effect effect-2"><input type="checkbox"><span class="text">Crocin</span><span class="lol">&nbsp&nbsp&nbsp</span></div>
+        <div class="inside effect effect-2"><input type="checkbox"><span class="text">Vitamin D</span><span class="lol">&nbsp&nbsp&nbsp</span></div>
     </form>
 </div>
 <script src="/js/medicinelist.js">

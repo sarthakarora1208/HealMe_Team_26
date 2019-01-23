@@ -5,7 +5,6 @@ const session = require('express-session');
 const passport = require('passport');
 
 
-
 //Db config;
 const db = require('./config/keys').MongoURI;
 
@@ -24,9 +23,6 @@ app.use(express.static('public'));
 
 // Ejs 
 app.set('view engine','ejs');
-
-// prints when the server was acessed 
-
 app.use(express.urlencoded({ extended: false}));
 
 // Express Session
@@ -54,7 +50,7 @@ app.use(flash());
 
 
 
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT || 5000;
 
 
 //routes
